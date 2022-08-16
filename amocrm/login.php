@@ -2,19 +2,24 @@
 
 include_once 'config.php';
 
+define('TOKEN_FILE', 'tmp' . DIRECTORY_SEPARATOR . 'token_info.json');
+
+
 use AmoCRM\OAuth2\Client\Provider\AmoCRM;
 
 include_once 'vendor/autoload.php';
+
 
 session_start();
 /**
  * Создаем провайдера
  */
 
+
 $provider = new AmoCRM([
     'clientId' => $clientId,
     'clientSecret' => $clientSecret,
-    'redirectUri' => $redirectUri,
+    'redirectUri' => $redirectUrl,
 ]);
 
 

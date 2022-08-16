@@ -54,6 +54,7 @@ define(['jquery', 'lib/components/base/modal'], function ($, Modal) {
               },
               error: function (jqXHR, textStatus, errorThrown) {
                 self.getModal('<div>Error status ' + textStatus + '-' + jqXHR.status + '</div>');
+                $('#allprod').trigger('button:load:stop');
               }
             });
 
